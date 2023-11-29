@@ -1,0 +1,165 @@
+<html>
+<head>
+    <script src="script.js"></script>
+		<title>Lab4</title>
+</head>
+<body>
+      <center>
+				<h1>Задание 3</h1>
+			</center>
+<h1>Задание 1.1</h1>
+<h2>Дано число. Проверьте, отрицательное оно или нет.</h2>
+<input type="text" id="in1">
+<button onclick="z1()"> Задание 1</button>
+
+<h1>Задание 1.2</h1>
+<h2>Дано число. Проверьте, четное оно или нет.</h2>
+<input type="text" id="in2">
+<button onclick="z2()"> Задание 2</button>
+
+<h1>Задание 2.1</h1>
+<h2>Дана некоторая строка. Найдите позицию первого нуля в строке.
+</h2>
+ <input type="text" id="inputString">
+  <button onclick="searchZero()">Найти</button>
+  <p id="result"></p>
+
+  <h1>Задание 2.2</h1>
+  <h2>Дан массив. Удалите из него элементы с заданным значением.</h2>
+   массив: <input type="text" id="inputArray"> 
+    элемент: <input type="text" id="remove1">
+  <button onclick="removeElements()">Удалить</button>
+  <p id="result1"></p>
+
+	<h1>Задание 3.1</h1>
+	<h2>Дано некоторое число. Проверьте, что цифры этого числа расположены по возрастанию.	</h2>
+	<input type="number" id="numberInput">
+    <button onclick="zadanie3()">Check</button>
+    <p id="result3"></p>
+
+		<h1>Задание 3.2</h1>
+		<h2>Дан массив:
+			[1, '', 2, 3, '', 5]
+			Удалите из массива все пустые строки.</h2>
+		<button onclick="z3_2()">del</button>
+
+			<h1>Задание 4.1</h1>
+			<h2>Сделайте функцию, которая вернет текущий день недели словом.</h2>
+			<button onclick="z4_1()">Текущая дата</button>
+
+			<h1>Задание 4.2</h1>
+			<h2>Сделайте функцию, которая параметром будет принимать число, а возвращать сумму его делителей.</h2>
+			<input type="number" id="sum_del">
+			<button onclick="z4_2()">Summa</button>
+
+			<h1>Задание 5.1</h1>
+			<h2>Дан абзац с числом и кнопка. По нажатию на кнопку возведите текст абзаца в квадрат.</h2>
+			<p id="num5_1">5</p>
+			<button onclick="squareNumber()">Square</button>
+
+			<h1>Задание 5.2</h1>
+			<h2>Даны инпуты, в которые вводятся числа. Сделайте так, чтобы по потери фокуса в любом инпуте его значение возводилось в квадрат.</h2>
+			<input type="number" onblur="squareNumber2(this)">
+   	  <input type="number" onblur="squareNumber2(this)">
+      <input type="number" onblur="squareNumber2(this)">
+
+			<h1>Задание 6.1 и 6.2 и 7.1</h1>
+			<h2>Дана кнопка и пустой список ul. По клику на кнопку заполните список числами от 1 до 10.</h2>
+			 <button onclick="z6_1()">Заполнить</button>
+			<h2>Дана кнопка и список ul, заполненный пунктами. По клику на кнопку удалите случайный пункт списка.</h2>
+			<button onclick="z6_2()">Удалить случайный</button>
+			<h2>Дана кнопка и список ul, заполненный числами. По клику на кнопку удалите пункт списка, содержащий самое максимальное число.</h2>
+			<h2><button onclick="z7_1()">Удалить максимальный</button></h2>
+
+			<ul id="list6.1"></ul>
+
+			<h1>Задание 7.2</h1>
+			<h2>Дана таблица и инпут. В инпут вводится дата рождения юзера в формате год-месяц-день. Выведите в первой колонке все даты рождения юзера, а во второй колонке - соответствующие дни недели.</h2>
+			<input type="text" id="in7_2" placeholder="(YYYY-MM-DD)">
+			<button onclick="z7_2()">Add Date</button>
+	
+			<table id="dateTable">
+					<tr>
+							<th>Date of Birth</th>
+							<th>Day of Week</th>
+					</tr>
+			</table>
+		
+			<h1>Задание 8</h1>
+			<script>
+        for (let i = 1; i <= 5; i++) {
+            let row = '';
+            for (let j = 1; j <= i; j++) {
+                row += 'x';
+            }
+            document.write(row + '<br>');
+        }
+    </script>
+
+<center>
+	<h1>Задание 4</h1>
+</center>
+
+<script>
+	let objects = [window, document, location, navigator];
+
+	for (let obj of objects) {
+			document.write('<h2>' + obj + '</h2>');
+			for (let prop in obj) {
+					document.write(prop + ': ' + obj[prop] + '<br>');
+			}
+	}
+</script>
+
+<center>
+	<h1>Задание 5</h1>
+</center>
+<div id="matrix"></div>
+
+    <button id="sortButton">Sort Matrix</button>
+		<script>
+			let matrix = [];
+			for (let i = 0; i < 10; i++) {
+					let row = [];
+					for (let j = 0; j < 10; j++) {
+							row.push(Math.floor(Math.random() * 100));
+					}
+					matrix.push(row);
+			}
+
+			let matrixDiv = document.getElementById('matrix');
+			for (let i = 0; i < 10; i++) {
+					for (let j = 0; j < 10; j++) {
+							let input = document.createElement('input');
+							input.type = 'text';
+							input.value = matrix[i][j];
+							input.style.width = '30px';
+							matrixDiv.appendChild(input);
+					}
+					matrixDiv.appendChild(document.createElement('br'));
+			}
+
+			document.getElementById('sortButton').addEventListener('click', function() {
+					for (let i = 0; i < 10; i++) {
+							if (i % 2 === 0) {
+									matrix[i].sort((a, b) => b - a); // Sort even rows in descending order
+							} else {
+									matrix[i].sort((a, b) => a - b); // Sort odd rows in ascending order
+							}
+					}
+					// Update the displayed matrix
+					let inputs = document.querySelectorAll('#matrix input');
+					let index = 0;
+					for (let i = 0; i < 10; i++) {
+							for (let j = 0; j < 10; j++) {
+									inputs[index].value = matrix[i][j];
+									index++;
+							}
+					}
+			});
+	</script>
+
+</body>
+		
+		</body>
+</html>
